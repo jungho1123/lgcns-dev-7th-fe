@@ -17,14 +17,19 @@ const nextConfig: NextConfig = {
   },
   experimental: {
     agentFeedback: true,
+    serverActions: {
+      bodySizeLimit: "6mb",
+    },
   },
   cacheComponents: true,
+  serverExternalPackages: ["mongodb"],
   partialPrefetching: true,
   turbopack: {
     rules: {
       "*.css": {
         loaders: ["@tailwindcss/turbopack"],
         as: "*.css",
+        condition: { not: "foreign" },
       },
     },
   },

@@ -1,10 +1,14 @@
-import Header from "@/component/templates/Header";
+import AppHeader from "@/app/AppHeader";
 
-export default function MainLayout({children}:{children: React.ReactNode}){
-    return (
-        <>
-        <Header />
-        {children}
-        </>
-    );
+export default function MainLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <>
+      <AppHeader />
+      {children}
+    </>
+  );
 }
